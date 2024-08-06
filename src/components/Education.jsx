@@ -1,68 +1,42 @@
 import { EDUCATION } from "../constants";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 const Education = () => {
-  const controls = useAnimation();
-  const { ref, inView } = useInView({ threshold: 0.1 });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
   return (
     <div className="container mx-auto px-4" id="education">
       <motion.h2
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: -20 }
-        }}
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
         className="mb-12 mt-20 text-center text-5xl font-semibold text-white"
       >
         Education
       </motion.h2>
       <motion.p
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: -20 }
-        }}
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
         className="mb-12 text-center text-2xl font-bold text-yellow-400"
       >
         My Educational Journey
       </motion.p>
       <div className="relative">
         <motion.div
-          initial="hidden"
-          animate={controls}
-          variants={{
-            visible: { height: "100%" },
-            hidden: { height: 0 }
-          }}
+          initial={{ height: 0 }}
+          whileInView={{ height: "100%" }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
           className="absolute left-1/2 w-1 bg-gray-300 transform -translate-x-1/2"
         ></motion.div>
         {EDUCATION.map((edu, index) => (
           <motion.div
             key={index}
-            initial="hidden"
-            animate={controls}
-            variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: index % 2 === 0 ? -100 : 100 }
-            }}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.3 }}
+            viewport={{ once: true }}
             className={`mb-12 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
           >
             <div className="w-full md:w-1/2 px-4 md:px-8">

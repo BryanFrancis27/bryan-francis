@@ -40,7 +40,7 @@ export const ABOUT = {
   languages: ["English", "Tagalog", "Cebuano"],
   email: "bryanfrancis1027@gmail.com",
   location: "Cebu City, Philippines",
-  text1: "I create dynamic, responsive websites that blend creativity with efficiency",
+  text1: "I create dynamic responsive websites that blend creativity with efficiency",
   text2: "Hello! I'm Bryan, a full-stack developer with a flair for graphic design. I thrive on crafting web experiences that are not only visually stunning but also highly functional and user-friendly. My passion for detail ensures that every project is polished and professional. Beyond coding, I'm an avid explorer of new cultures and cuisines. My curiosity drives me to stay on the cutting edge of technology and design"
 };
 
