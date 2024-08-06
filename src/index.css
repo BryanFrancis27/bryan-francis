@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Inter", sans-serif;
+}
+
+.white-shadow {
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3), 0 10px 15px rgba(255, 255, 255, 0.2), 0 20px 25px rgba(255, 255, 255, 0.1);
+}
