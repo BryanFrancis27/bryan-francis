@@ -58,7 +58,7 @@ const Footer = () => {
         transition={{ duration: 0.5, delay: 1 }}
         className="mt-8 text-center text-sm tracking-wide text-gray-400"
       >
-        &copy;compileTab. All rights reserved.
+        &copy;2024 Bryan Francis O. Encarnacion. All rights reserved.
       </motion.p>
     </motion.div>
   );

@@ -121,21 +121,21 @@ export const EDUCATION = [
     degree: 'Applied Degree in Software Engineering (BDSE)',
     location: 'Singapore',
     duration: '2023 - Present',
-    logo: '/src/assets/lithan-logo.png' 
+    logo: '../src/assets/lithan-logo.png' 
   },
   {
     institution: 'University of Cebu',
     degree: 'Bachelor of Science in Information Technology (SE)',
     location: 'Banilad, Philippines',
     duration: '2023 - Present',
-    logo: '/src/assets/uc-logo.png', 
+    logo: '../src/assets/uc-logo.png', 
   },
   {
     institution: 'University of Cebu',
     degree: 'Senior High School (K-12):STEM',
     location: 'Lapu-Lapu & Mandaue, Philippines',
     duration: '2021-2023',
-    logo: '/src/assets/uc-logo.png', 
+    logo: '../src/assets/uc-logo.png', 
   },
   
 ];
