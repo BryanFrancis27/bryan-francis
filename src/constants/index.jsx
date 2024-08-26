@@ -121,7 +121,7 @@ export const EDUCATION = [
     degree: 'Applied Degree in Software Engineering (BDSE)',
     location: 'Singapore',
     duration: '2023 - Present',
-    logo: '../public/lithan-logo.png', 
+    logo: '../src/assets/lithan-logo.png', 
   },
   {
     institution: 'University of Cebu',
