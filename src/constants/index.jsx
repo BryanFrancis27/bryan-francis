@@ -30,7 +30,7 @@ export const NAVIGATION_LINKS = [
 
 export const PROFILE = {
   name: "Bryan Encarnacion",
-  info: "A versatile full-stack developer blending technical expertise with creative graphic design skills.",
+  info: "A versatile Software Developer blending technical expertise with creative graphic design skills.",
 };
 
 export const ABOUT = {
@@ -121,7 +121,7 @@ export const EDUCATION = [
     degree: 'Applied Degree in Software Engineering (BDSE)',
     location: 'Singapore',
     duration: '2023 - Present',
-    logo: '../src/assets/lithan-logo.png' 
+    logo: '../public/lithan-logo.png', 
   },
   {
     institution: 'University of Cebu',
