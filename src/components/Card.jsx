@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prop-types
 const Card = ({ image, title, subtitle, link}) => {
   return (
     <a href={link} className="m-4 block max-w-sm overflow-hidden rounded-lg">
