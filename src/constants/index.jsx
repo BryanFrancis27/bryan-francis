@@ -14,10 +14,10 @@ import image1 from "../assets/project1.jpeg";
 import image2 from "../assets/project2.jpeg";
 import image3 from "../assets/project3.jpeg";
 import image4 from "../assets/project4.jpeg";
-import image5 from "../assets/project5.jpeg";
-import image6 from "../assets/project6.jpeg";
-import image7 from "../assets/project7.jpeg";
-import image8 from "../assets/project8.jpeg";
+// import image5 from "../assets/project5.jpeg";
+// import image6 from "../assets/project6.jpeg";
+// import image7 from "../assets/project7.jpeg";
+// import image8 from "../assets/project8.jpeg";
 
 
 export const NAVIGATION_LINKS = [
@@ -67,28 +67,6 @@ export const PROJECTS = [
     subtitle:
       "A personal portfolio website designed with HTML, CSS, and JavaScript.",
     image: image4,
-  },
-  {
-    title: "Weather Dashboard",
-    subtitle:
-      "A weather dashboard application built with Vue.js and Express.js.",
-    image: image5,
-  },
-  {
-    title: "Blog Platform",
-    subtitle:
-      "A blogging platform developed with Ruby on Rails and PostgreSQL.",
-    image: image6,
-  },
-  {
-    title: "Fitness Tracker",
-    subtitle: "A fitness tracking app created using Flutter and Firebase.",
-    image: image7,
-  },
-  {
-    title: "Recipe Finder",
-    subtitle: "A recipe finder application developed with Angular and Node.js.",
-    image: image8,
   },
 ];
 
