@@ -113,7 +113,7 @@ export const EDUCATION = [
     degree: 'Senior High School (K-12):STEM',
     location: 'Lapu-Lapu & Mandaue, Philippines',
     duration: '2021-2023',
-    logo: '../src/assets/uc-logo.png', 
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/University-of-Cebu-Logo.jpg', 
   },
   
 ];
