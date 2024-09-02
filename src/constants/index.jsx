@@ -99,14 +99,14 @@ export const EDUCATION = [
     degree: 'Applied Degree in Software Engineering (BDSE)',
     location: 'Singapore',
     duration: '2023 - Present',
-    logo: '../src/assets/lithan-logo.png', 
+    logo: 'https://www.educlaas.com/highered/wp-content/uploads/sites/14/2024/06/EduCLaaS-Lithan-Vertical-01-1.png', 
   },
   {
     institution: 'University of Cebu',
     degree: 'Bachelor of Science in Information Technology (SE)',
     location: 'Banilad, Philippines',
     duration: '2023 - Present',
-    logo: '../src/assets/uc-logo.png', 
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/University-of-Cebu-Logo.jpg', 
   },
   {
     institution: 'University of Cebu',
