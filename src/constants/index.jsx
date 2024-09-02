@@ -1,19 +1,16 @@
 import {
-  FaXTwitter,
   FaGithub,
   FaLinkedin,
   FaFacebook,
-  FaDiscord,
-  FaInstagram,
 } from "react-icons/fa6";
 
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaJava, FaDatabase, FaNode } from "react-icons/fa";
 import { SiSpring } from "react-icons/si";
 
-import image1 from "../assets/project1.jpeg";
-import image2 from "../assets/project2.jpeg";
-import image3 from "../assets/project3.jpeg";
-import image4 from "../assets/project4.jpeg";
+import image1 from "../assets/DobuMartialArts.png";
+import image2 from "../assets/ABCCarsportal.png";
+import image3 from "../assets/Boutiqa.png";
+import image4 from "../assets/MealsOnWheels.png";
 // import image5 from "../assets/project5.jpeg";
 // import image6 from "../assets/project6.jpeg";
 // import image7 from "../assets/project7.jpeg";
@@ -46,27 +43,32 @@ export const ABOUT = {
 
 export const PROJECTS = [
   {
-    title: "E-commerce Platform",
-    subtitle:
-      "A full-stack e-commerce platform built with React, Node.js, and MongoDB.",
+    title: "Dobu Martial Arts",
+    subtitle: "A full-stack e-commerce platform built with React, Node.js, and MongoDB.",
     image: image1,
+    details: "This platform allows users to browse products, add them to a cart, and securely check out. It features user authentication, a product review system, and an admin dashboard for managing products and orders.",
+    sourceCodeLink: "https://github.com/username/e-commerce-platform",
   },
   {
-    title: "Social Media App",
-    subtitle:
-      "A social media application developed using Next.js and Firebase.",
+    title: "ABC Cars Portal",
+    subtitle: "A social media application developed using Next.js and Firebase.",
     image: image2,
+    details: "This app supports real-time messaging, user profiles, and post sharing. It uses Firebase for authentication, database, and hosting, with Next.js ensuring efficient server-side rendering.",
+    sourceCodeLink: "https://github.com/BryanFrancis27/ABCcars_portal.git",
   },
   {
-    title: "Project Management Tool",
+    title: "Boutiqa",
     subtitle: "A project management tool built with Django and PostgreSQL.",
     image: image3,
+    details: "This tool enables teams to collaborate on projects by tracking tasks, deadlines, and progress. It includes features like user roles, project timelines, and task assignments.",
+    sourceCodeLink: "https://github.com/username/project-management-tool",
   },
   {
-    title: "Personal Portfolio",
-    subtitle:
-      "A personal portfolio website designed with HTML, CSS, and JavaScript.",
+    title: "Meals on Wheels",
+    subtitle: "A personal portfolio website designed with HTML, CSS, and JavaScript.",
     image: image4,
+    details: "This portfolio showcases my skills, projects, and experience. It includes sections like About Me, Projects, Skills, and Contact, all in a responsive design.",
+    sourceCodeLink: "https://github.com/username/personal-portfolio",
   },
 ];
 
@@ -95,11 +97,11 @@ export const SKILLS = [
 
 export const EDUCATION = [
   {
-    institution: 'Lithan EduCLaaS',
-    degree: 'Applied Degree in Software Engineering (BDSE)',
-    location: 'Singapore',
-    duration: '2023 - Present',
-    logo: 'https://www.educlaas.com/highered/wp-content/uploads/sites/14/2024/06/EduCLaaS-Lithan-Vertical-01-1.png', 
+    institution: 'University of Cebu',
+    degree: 'Senior High School (K-12):STEM',
+    location: 'Lapu-Lapu & Mandaue, Philippines',
+    duration: '2021-2023',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/University-of-Cebu-Logo.jpg', 
   },
   {
     institution: 'University of Cebu',
@@ -109,38 +111,25 @@ export const EDUCATION = [
     logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/University-of-Cebu-Logo.jpg', 
   },
   {
-    institution: 'University of Cebu',
-    degree: 'Senior High School (K-12):STEM',
-    location: 'Lapu-Lapu & Mandaue, Philippines',
-    duration: '2021-2023',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/University-of-Cebu-Logo.jpg', 
-  },
-  
+    institution: 'Lithan EduCLaaS',
+    degree: 'Applied Degree in Software Engineering (BDSE)',
+    location: 'Singapore',
+    duration: '2023 - Present',
+    logo: 'https://www.educlaas.com/highered/wp-content/uploads/sites/14/2024/06/EduCLaaS-Lithan-Vertical-01-1.png', 
+  },  
 ];
 
 export const SOCIAL_MEDIA_LINKS = [
   {
-    href: "https://x.com/",
+    href: "https://www.facebook.com/bryanfrancis.27",
     icon: <FaFacebook fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://x.com/",
-    icon: <FaDiscord fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://x.com/",
-    icon: <FaInstagram fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://x.com/",
-    icon: <FaXTwitter fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://github.com/",
+    href: "https://github.com/BryanFrancis27",
     icon: <FaGithub fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/bryan-francis-encarnacion-997126304/",
     icon: <FaLinkedin fontSize={25} className="hover:opacity-80" />,
   },
 ];
