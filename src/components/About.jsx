@@ -15,7 +15,7 @@ const About = () => {
         About Me
       </motion.h2>
       
-      <div className="flex flex-col lg:flex-row items-center lg:justify-between bg-gradient-to-r from-zinc-800 to-zinc-950 rounded-lg p-10 shadow-xl">
+      <div className="flex flex-col lg:flex-row items-center lg:justify-between">
         <motion.div 
           className="w-full lg:w-2/3 text-white mb-10 lg:mb-0"
           initial={{ opacity: 0, x: -50 }}

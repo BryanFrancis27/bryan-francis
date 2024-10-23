@@ -44,7 +44,7 @@ const Skills = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="w-full md:w-1/2 bg-gradient-to-b from-zinc-900 to-zinc-950 p-10 rounded-lg shadow-lg"
+            className="w-full md:w-1/2"
           >
             <h3 className="text-center text-4xl font-semibold text-white mb-8">
               {category.category}
@@ -68,7 +68,7 @@ const Skills = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.3 }}
         viewport={{ once: true }}
-        className="mt-12 bg-gradient-to-b from-zinc-900 to-zinc-950 p-10 rounded-lg shadow-lg"
+        className="mt-12 padding-x-4"
       >
         <h3 className="text-center text-4xl font-semibold text-white mb-8">Soft Skills</h3>
         <Slider {...sliderSettings}>
