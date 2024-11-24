@@ -1,30 +1,60 @@
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
-// eslint-disable-next-line react/prop-types
-const Card = ({ image, title, subtitle, sourceCodeLink }) => {
-  return (
-    <motion.div
-      className="m-4 block max-w-sm overflow-hidden rounded-lg relative group shadow-lg"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <img className="w-full" src={image} alt={title} />
-      
-      <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
-        <h2 className="mb-2 text-2xl font-bold text-white">{title}</h2>
-        <p className="mb-4 text-sm font-medium text-white">{subtitle}</p>
-
+const Card = ({ title, subtitle, description, technologies, image, sourceCodeLink }) => (
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className="bg-zinc-900 flex flex-col items-center justify-between rounded-lg shadow-lg overflow-hidden w-45 h-90"
+  >
+    {/* Image Section */}
+    <img
+      src={image}
+      alt={title}
+      className="w-full h-48 object-cover"
+    />
+    {/* Content Section */}
+    <div className="p-6 text-center">
+      <h3 className="text-lg font-bold text-white">{title}</h3>
+      <h4 className="text-sm text-gray-400">{subtitle}</h4>
+      <p className="text-sm text-gray-300 mt-4">{description}</p>
+      {/* Technologies */}
+      <div className="mt-3 flex flex-wrap gap-2 justify-center">
+        {technologies?.map((tech, i) => (
+          <span
+            key={i}
+            className="text-xs bg-zinc-900 text-gray-200 px-3 py-1 rounded-full"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+      {/* Source Code Link */}
+      {sourceCodeLink && (
         <a
           href={sourceCodeLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-yellow-500 text-white py-2 px-4 rounded-full hover:bg-yellow-600 transition-colors duration-300 mt-4"
+          className="text-white mt-4 inline-block transition duration-300 ease-in-out hover:text-yellow-400"
         >
           View Source Code
         </a>
-      </div>
-    </motion.div>
-  );
+      )}
+    </div>
+  </motion.div>
+);
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  technologies: PropTypes.arrayOf(PropTypes.string),
+  image: PropTypes.string.isRequired,
+  sourceCodeLink: PropTypes.string,
+};
+
+Card.defaultProps = {
+  technologies: [],
+  sourceCodeLink: null,
 };
 
 export default Card;

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="relative container mx-auto mt-20" id="about">
+    <div className="relative container mx-auto mt-20 px-4 sm:px-8 lg:px-16 max-w-7xl" id="about">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ const About = () => {
           />
           <div className="mt-4 flex space-x-4">
             <motion.button
-              className="bg-gradient-to-r from-zinc-900 to-zinc-700 text-white py-2 px-6 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-yellow-900 hover:to-yellow-500 hover:scale-105 transition duration-300 flex items-center"
+              className="bg-gradient-to-r from-zinc-900 to-zinc-700 text-white py-2 px-6 rounded-md shadow-lg hover:bg-gradient-to-r hover:from-yellow-900 hover:to-yellow-500 hover:scale-105 transition duration-300 flex items-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -133,7 +133,7 @@ const About = () => {
               <span className="ml-2">▶️</span>
             </motion.button>
             <motion.button
-              className="bg-gradient-to-r from-zinc-900 to-zinc-700 text-white py-2 px-6 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-yellow-900 hover:to-yellow-500 hover:scale-105 transition duration-300 flex items-center"
+              className="bg-gradient-to-r from-zinc-900 to-zinc-700 text-white py-2 px-6 rounded-md shadow-lg hover:bg-gradient-to-r hover:from-yellow-900 hover:to-yellow-500 hover:scale-105 transition duration-300 flex items-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

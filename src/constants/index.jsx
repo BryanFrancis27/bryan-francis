@@ -32,13 +32,13 @@ export const PROFILE = {
 
 export const ABOUT = {
   name: "Bryan Francis O. Encarnacion",
-  age: 19,
+  age: 20,
   degree: "BSIT-Software Engineering",
   languages: ["English", "Tagalog", "Cebuano"],
   email: "bryanfrancis1027@gmail.com",
   location: "Cebu City, Philippines",
   text1: "I create dynamic responsive websites that blend creativity with efficiency",
-  text2: "Hello! I'm Bryan, a full-stack developer with a flair for graphic design. I thrive on crafting web experiences that are not only visually stunning but also highly functional and user-friendly. My passion for detail ensures that every project is polished and professional. Beyond coding, I'm an avid explorer of new cultures and cuisines. My curiosity drives me to stay on the cutting edge of technology and design"
+  text2: "Hello! I'm Bryan, a full-stack developer with a flair for graphic design. I thrive on crafting web experiences that are not only visually stunning but also highly functional and user-friendly. My passion for detail ensures that every project is polished and professional. Beyond coding, I'm an avid explorer of new cultures and cuisines. My curiosity drives me to stay on the cutting edge of technology and design."
 };
 
 export const PROJECTS = [
@@ -76,21 +76,21 @@ export const SKILLS = [
   {
     category: "Front-end",
     skills: [
-      { name: "HTML", experience: "75%", color: "bg-red-500", icon: <FaHtml5 className="text-2xl text-orange-600" /> },
-      { name: "CSS", experience: "75%", color: "bg-blue-500", icon: <FaCss3Alt className="text-2xl text-blue-500" /> },
-      { name: "JavaScript", experience: "65%", color: "bg-yellow-500", icon: <FaJs className="text-2xl text-yellow-500" /> },
-      { name: "React", experience: "70%", color: "bg-blue-400", icon: <FaReact className="text-2xl text-blue-400" /> },
-      { name: "Bootstrap", experience: "70%", color: "bg-purple-600", icon: <FaBootstrap className="text-2xl text-purple-600" /> },
+      { name: "HTML", experience: "75%", color: "bg-gray-500", icon: <FaHtml5 className="text-2xl text-orange-600" /> },
+      { name: "CSS", experience: "75%", color: "bg-gray-500", icon: <FaCss3Alt className="text-2xl text-blue-500" /> },
+      { name: "JavaScript", experience: "65%", color: "bg-gray-500", icon: <FaJs className="text-2xl text-yellow-500" /> },
+      { name: "React", experience: "70%", color: "bg-gray-500", icon: <FaReact className="text-2xl text-blue-400" /> },
+      { name: "Bootstrap", experience: "70%", color: "bg-gray-500", icon: <FaBootstrap className="text-2xl text-purple-600" /> },
     ],
   },
   {
     category: "Back-end",
     skills: [
-      { name: "Spring Boot", experience: "65%", color: "bg-green-500", icon: <SiSpring className="text-2xl text-green-500" /> },
-      { name: "Java", experience: "65%", color: "bg-blue-900", icon: <FaJava className="text-2xl text-blue-900" /> },
-      { name: "MySQL", experience: "75%", color: "bg-blue-600", icon: <FaDatabase className="text-2xl text-blue-600" /> },
-      { name: "Spring", experience: "65%", color: "bg-green-500", icon: <SiSpring className="text-2xl text-green-500" /> },
-      { name: "Node.js", experience: "65%", color: "bg-green-800", icon: <FaNode className="text-2xl text-green-800" /> },
+      { name: "Spring Boot", experience: "65%", color: "bg-gray-500", icon: <SiSpring className="text-2xl text-green-500" /> },
+      { name: "Java", experience: "65%", color: "bg-gray-500", icon: <FaJava className="text-2xl text-blue-900" /> },
+      { name: "MySQL", experience: "75%", color: "bg-gray-500", icon: <FaDatabase className="text-2xl text-blue-600" /> },
+      { name: "Spring", experience: "65%", color: "bg-gray-500", icon: <SiSpring className="text-2xl text-green-500" /> },
+      { name: "Node.js", experience: "65%", color: "bg-gray-500", icon: <FaNode className="text-2xl text-green-800" /> },
     ],
   }
 ];

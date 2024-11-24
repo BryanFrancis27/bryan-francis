@@ -3,25 +3,27 @@ import { motion } from "framer-motion";
 
 const Education = () => {
   return (
-    <div className="container mx-auto px-4" id="education">
+    <div className="container mx-auto px-4 sm:px-8 lg:px-16 max-w-4xl" id="education">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="mb-12 mt-20 text-center text-5xl font-semibold text-white"
+        className="mb-8 mt-20 text-center text-4xl sm:text-5xl font-semibold text-white"
       >
         Education
       </motion.h2>
+      
       <motion.p
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
-        className="mb-12 text-center text-2xl font-bold text-yellow-400"
+        className="mb-10 text-center text-xl sm:text-2xl font-semibold text-yellow-400"
       >
         My Educational Journey
       </motion.p>
+      
       <div className="relative">
         <motion.div
           initial={{ height: 0 }}
@@ -30,6 +32,7 @@ const Education = () => {
           viewport={{ once: true }}
           className="absolute left-1/2 w-1 bg-gray-300 transform -translate-x-1/2"
         ></motion.div>
+        
         {EDUCATION.map((edu, index) => (
           <motion.div
             key={index}
@@ -37,30 +40,31 @@ const Education = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.3 }}
             viewport={{ once: true }}
-            className={`mb-12 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
+            className={`mb-16 flex flex-col items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
           >
-            <div className="w-full md:w-1/2 px-4 md:px-8">
-              <div className="bg-gradient-to-b from-zinc-900 to-zinc-950 p-6 rounded-lg shadow-lg relative transition-transform transform hover:scale-105">
+            {/* Left/Right Content */}
+            <div className="w-full md:w-2/5 px-4 md:px-6">
+              <div className="bg-p-6 transition-transform transform hover:scale-105">
                 <div className="flex items-center mb-4">
                   <img
                     src={edu.logo}
                     alt={`${edu.institution} logo`}
                     className="w-12 h-12 mr-4 rounded-full"
                   />
-                  <h3 className="text-xl font-semibold text-white">{edu.institution} – {edu.location}</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-white">
+                    {edu.institution}
+                  </h3>
                 </div>
-                <p className="text-lg text-white">{edu.degree}</p>
-                <p className="text-md text-teal-400">{edu.duration}</p>
+                <p className="text-white text-md">{edu.degree}</p>
+                <p className="text-teal-400 text-sm mt-2">
+                  {edu.location} • {edu.duration}
+                </p>
               </div>
             </div>
-            <div className="hidden md:flex w-1/2 items-center justify-center">
-              <div className="w-8 h-8 bg-yellow-500 rounded-full border-4 border-white flex items-center justify-center">
-                {index === EDUCATION.length - 1 ? (
-                  <span className="text-white text-xl">&#9733;</span>
-                ) : (
-                  <span className="text-white text-xl">&#x1F393;</span>
-                )}
-              </div>
+            
+            {/* Timeline Circle */}
+            <div className="relative flex md:w-1/5 justify-center items-center">
+              <div className="w-6 h-6 bg-gray-400 rounded-full border-2 border-white z-10"></div>
             </div>
           </motion.div>
         ))}

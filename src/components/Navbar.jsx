@@ -14,10 +14,10 @@ const Navbar = () => {
     e.preventDefault();
     const targetElement = document.querySelector(href);
     if (targetElement) {
-      const offset = -85; // Adjust offset as needed
+      const offset = -140; // Adjust the offset value for higher scrolling
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY + offset;
-
+  
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth',
@@ -25,6 +25,7 @@ const Navbar = () => {
     }
     setIsMobileMenuOpen(false); // Close mobile menu on link click
   };
+  
 
   const handleLogoClick = (e) => {
     e.preventDefault();
