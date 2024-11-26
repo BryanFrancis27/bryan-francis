@@ -3,16 +3,12 @@ import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const SkillBar = ({ name, experience, color, icon }) => {
-  // Extract numeric value from experience string
   const numericExperience = parseInt(experience, 10);
   const [displayedExperience, setDisplayedExperience] = useState(0);
-
-  // Animation controls for the percentage text
   const controls = useAnimation();
 
   useEffect(() => {
     controls.start({ width: experience });
-    // Animate the displayed percentage from 0 to the actual experience value
     const interval = setInterval(() => {
       setDisplayedExperience((prev) => {
         if (prev < numericExperience) {
@@ -22,31 +18,45 @@ const SkillBar = ({ name, experience, color, icon }) => {
           return numericExperience;
         }
       });
-    }, 15); // Adjust the duration here to change the speed of the number increment
+    }, 15);
 
     return () => clearInterval(interval);
   }, [controls, numericExperience, experience]);
 
   return (
-    <div className="mb-4">
-      <div className="flex justify-between mb-1">
-        <div className="flex items-center">
-          {icon}
-          <span className="ml-2 text-sm font-medium text-white">{name}</span>
+    <motion.div 
+      className="mb-4 w-full group"
+      whileHover={{ 
+        scale: 1.02,
+        transition: { duration: 0.2 }
+      }}
+    >
+      <div className="flex justify-between mb-2 items-center">
+        <div className="flex items-center space-x-3">
+          <div className="w-7 h-7 flex items-center justify-center bg-zinc-800 rounded-md p-1 group-hover:bg-zinc-700 transition-colors">
+            {icon}
+          </div>
+          <span className="text-sm font-medium text-white truncate max-w-[200px] group-hover:text-yellow-400 transition-colors">
+            {name}
+          </span>
         </div>
-        <span className="text-sm font-medium text-white">
+        <span className="text-xs font-medium text-gray-400">
           {displayedExperience}%
         </span>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+      <div className="w-full bg-zinc-800 rounded-full h-2 overflow-hidden">
         <motion.div
-          className={`${color} h-2.5 rounded-full`}
+          className={`${color} h-2 rounded-full`}
           initial={{ width: 0 }}
           animate={controls}
-          transition={{ duration: 1.5 }}
+          transition={{ 
+            duration: 1.5,
+            type: "spring",
+            stiffness: 50
+          }}
         ></motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
