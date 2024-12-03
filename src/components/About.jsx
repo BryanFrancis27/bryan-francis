@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="relative container mx-auto mt-20 px-4 sm:px-8 lg:px-16 max-w-7xl" id="about">
+    <div className="container mx-auto mt-20 px-4 sm:px-8 lg:px-16 max-w-7xl" id="about">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ const About = () => {
           </motion.p>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-opacity-20 p-6 rounded-lg shadow-lg"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-lg"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -101,7 +101,7 @@ const About = () => {
           </motion.div>
           
           <motion.p
-            className="mt-6 text-lg leading-loose bg-opacity-20 p-4 rounded-lg shadow-lg"
+            className="mt-6 text-lg leading-loose rounded-lg"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.7 }}

@@ -44,30 +44,30 @@ export const ABOUT = {
 export const PROJECTS = [
   {
     title: "Dobu Martial Arts",
-    subtitle: "A full-stack e-commerce platform built with React, Node.js, and MongoDB.",
+    subtitle: "HTML | CSS | Javascript | JQuery",
     image: image1,
-    details: "This platform allows users to browse products, add them to a cart, and securely check out. It features user authentication, a product review system, and an admin dashboard for managing products and orders.",
+    details: "DoBu Martial Arts is a dynamic martial arts gym offering diverse classes, fitness training, and self-defense courses, now supported by a custom-designed, user-friendly website to enhance its online presence and operations.",
     sourceCodeLink: "https://github.com/username/e-commerce-platform",
   },
   {
     title: "ABC Cars Portal",
-    subtitle: "A social media application developed using Next.js and Firebase.",
+    subtitle: "Spring Boot | Java | MySQL",
     image: image2,
-    details: "This app supports real-time messaging, user profiles, and post sharing. It uses Firebase for authentication, database, and hosting, with Next.js ensuring efficient server-side rendering.",
+    details: "ABC Cars is a user-friendly used car sales portal built with Spring Framework and MySQL, focusing on seamless functionality and quality assurance through Risk-Based Testing.",
     sourceCodeLink: "https://github.com/BryanFrancis27/ABCcars_portal.git",
   },
   {
     title: "Boutiqa",
-    subtitle: "A project management tool built with Django and PostgreSQL.",
+    subtitle: "Axure | Prototyping | Wireframing",
     image: image3,
-    details: "This tool enables teams to collaborate on projects by tracking tasks, deadlines, and progress. It includes features like user roles, project timelines, and task assignments.",
+    details: "Boutiqa is a user-focused marketplace designed with high-fidelity prototypes to ensure seamless experiences for both vendors and consumers, prioritizing usability and efficient interactions.",
     sourceCodeLink: "https://github.com/username/project-management-tool",
   },
   {
     title: "Meals on Wheels",
-    subtitle: "A personal portfolio website designed with HTML, CSS, and JavaScript.",
+    subtitle: "PHP | Laravel | Vue | MySQL",
     image: image4,
-    details: "This portfolio showcases my skills, projects, and experience. It includes sections like About Me, Projects, Skills, and Contact, all in a responsive design.",
+    details: "This web application focuses on assisting individuals with disabilities and the elderly by offering them free food delivery services, specifically tailored to support the efforts of charity organizations.",
     sourceCodeLink: "https://github.com/username/personal-portfolio",
   },
 ];
