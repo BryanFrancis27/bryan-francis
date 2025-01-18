@@ -34,11 +34,11 @@ export const ABOUT = {
   name: "Bryan Francis O. Encarnacion",
   age: 20,
   degree: "BSIT-Software Engineering",
-  languages: ["English", "Tagalog", "Cebuano"],
+  website: "bryan-francis.vercel.app",
   email: "bryanfrancis1027@gmail.com",
-  location: "Cebu City, Philippines",
+  linkedin: "Bryan Francis Encarnacion",
   text1: "I create dynamic responsive websites that blend creativity with efficiency",
-  text2: "Hello! I'm Bryan, a full-stack developer with a flair for graphic design. I thrive on crafting web experiences that are not only visually stunning but also highly functional and user-friendly. My passion for detail ensures that every project is polished and professional. Beyond coding, I'm an avid explorer of new cultures and cuisines. My curiosity drives me to stay on the cutting edge of technology and design."
+  text2: "Hello! I'm Bryan, a full-stack developer with a flair for graphic design. I thrive on crafting web experiences that are not only visually stunning but also highly functional and user-friendly. My passion for detail ensures that every project is polished and professional. Beyond coding, I'm an avid explorer of new cultures and cuisines. My curiosity drives me to stay on the cutting edge of technology and design.",
 };
 
 export const PROJECTS = [
@@ -47,7 +47,7 @@ export const PROJECTS = [
     subtitle: "HTML | CSS | Javascript | JQuery",
     image: image1,
     details: "DoBu Martial Arts is a dynamic martial arts gym offering diverse classes, fitness training, and self-defense courses, now supported by a custom-designed, user-friendly website to enhance its online presence and operations.",
-    sourceCodeLink: "https://github.com/username/e-commerce-platform",
+    sourceCodeLink: "https://github.com/BryanFrancis27/Dobu-Martial-Arts.git",
   },
   {
     title: "ABC Cars Portal",
@@ -97,12 +97,12 @@ export const SKILLS = [
 
 export const EDUCATION = [
   {
-    institution: 'University of Cebu',
-    degree: 'Senior High School (K-12):STEM',
-    location: 'Lapu-Lapu & Mandaue, Philippines',
-    duration: '2021-2023',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/University-of-Cebu-Logo.jpg', 
-  },
+    institution: 'Lithan EduCLaaS',
+    degree: 'Applied Degree in Software Engineering (BDSE)',
+    location: 'Singapore',
+    duration: '2023 - Present',
+    logo: 'https://www.educlaas.com/highered/wp-content/uploads/sites/14/2024/06/EduCLaaS-Lithan-Vertical-01-1.png', 
+  },  
   {
     institution: 'University of Cebu',
     degree: 'Bachelor of Science in Information Technology (SE)',
@@ -111,12 +111,12 @@ export const EDUCATION = [
     logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/University-of-Cebu-Logo.jpg', 
   },
   {
-    institution: 'Lithan EduCLaaS',
-    degree: 'Applied Degree in Software Engineering (BDSE)',
-    location: 'Singapore',
-    duration: '2023 - Present',
-    logo: 'https://www.educlaas.com/highered/wp-content/uploads/sites/14/2024/06/EduCLaaS-Lithan-Vertical-01-1.png', 
-  },  
+    institution: 'University of Cebu',
+    degree: 'Senior High School (K-12):STEM',
+    location: 'Lapu-Lapu & Mandaue, Philippines',
+    duration: '2021-2023',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/University-of-Cebu-Logo.jpg', 
+  },
 ];
 
 export const SOCIAL_MEDIA_LINKS = [

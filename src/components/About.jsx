@@ -77,7 +77,7 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <span className="font-semibold">Languages:</span> {ABOUT.languages.join(', ')}
+                <span className="font-semibold">Website:</span> {ABOUT.website}
               </motion.p>
               <motion.p 
                 className="mt-2 text-lg leading-loose"
@@ -95,7 +95,7 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                <span className="font-semibold">Location:</span> {ABOUT.location}
+                <span className="font-semibold">LinkedIn:</span> {ABOUT.linkedin}
               </motion.p>
             </div>
           </motion.div>
@@ -124,22 +124,21 @@ const About = () => {
             className="w-full max-w-xs h-auto rounded-md shadow-lg object-cover"
           />
           <div className="mt-4 flex space-x-4">
-            <motion.button
-              className="bg-gradient-to-r from-zinc-900 to-zinc-700 text-white py-2 px-6 rounded-md shadow-lg hover:bg-gradient-to-r hover:from-yellow-900 hover:to-yellow-500 hover:scale-105 transition duration-300 flex items-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <a
+              href="https://drive.google.com/file/d/1yumKEXd7csybixyjE0aCZuEH3hwjUU4g/view?usp=sharing" // Replace YOUR_RESUME_FILE_ID with your resume's file ID
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center"
             >
-              Video Introduction
-              <span className="ml-2">▶️</span>
-            </motion.button>
-            <motion.button
-              className="bg-gradient-to-r from-zinc-900 to-zinc-700 text-white py-2 px-6 rounded-md shadow-lg hover:bg-gradient-to-r hover:from-yellow-900 hover:to-yellow-500 hover:scale-105 transition duration-300 flex items-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Resume
-              <span className="ml-2">📄</span>
-            </motion.button>
+              <motion.button
+                className="bg-gradient-to-r from-zinc-900 to-zinc-700 text-white py-2 px-6 rounded-md shadow-lg hover:bg-gradient-to-r hover:from-yellow-900 hover:to-yellow-500 hover:scale-105 transition duration-300 flex items-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Resume
+                <span className="ml-2">📄</span>
+              </motion.button>
+            </a>
           </div>
         </motion.div>
       </div>
