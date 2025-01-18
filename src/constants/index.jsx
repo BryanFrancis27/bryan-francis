@@ -61,14 +61,14 @@ export const PROJECTS = [
     subtitle: "Axure | Prototyping | Wireframing",
     image: image3,
     details: "Boutiqa is a user-focused marketplace designed with high-fidelity prototypes to ensure seamless experiences for both vendors and consumers, prioritizing usability and efficient interactions.",
-    sourceCodeLink: "https://github.com/username/project-management-tool",
+    sourceCodeLink: "https://github.com/BryanFrancis27/Boutiqa-Prototype-.git",
   },
   {
     title: "Meals on Wheels",
     subtitle: "PHP | Laravel | Vue | MySQL",
     image: image4,
     details: "This web application focuses on assisting individuals with disabilities and the elderly by offering them free food delivery services, specifically tailored to support the efforts of charity organizations.",
-    sourceCodeLink: "https://github.com/username/personal-portfolio",
+    sourceCodeLink: "https://github.com/itsnaaur/Merry-Meals---Enterprise-Application.git",
   },
 ];
 
