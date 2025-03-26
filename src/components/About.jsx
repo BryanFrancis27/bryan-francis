@@ -125,7 +125,7 @@ const About = () => {
           />
           <div className="mt-4 flex space-x-4">
             <a
-              href="https://drive.google.com/file/d/1yumKEXd7csybixyjE0aCZuEH3hwjUU4g/view?usp=sharing" // Replace YOUR_RESUME_FILE_ID with your resume's file ID
+              href="https://drive.google.com/file/d/191AMt7HXDqNtR21zxZ_dq9fQjwCDM0s3/view?usp=sharing" // Replace YOUR_RESUME_FILE_ID with your resume's file ID
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center"
