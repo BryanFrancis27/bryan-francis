@@ -1,73 +1,109 @@
-import { EDUCATION } from "../constants";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { EDUCATION, EDUCATION_STAGES } from "../data/education";
+
+const EDUCATION_BY_ID = new Map(EDUCATION.map((education) => [education.id, education]));
 
 const Education = () => {
-  return (
-    <div className="container mx-auto px-4 sm:px-8 lg:px-16 py-24 relative" id="education">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ 
-          duration: 0.6,
-          type: "spring"
-        }}
-        viewport={{ once: true }}
-        className="mb-16 text-center text-4xl sm:text-5xl font-semibold text-white"
-      >
-        Education
-      </motion.h2>
-      
-      {/* Vertical Timeline Line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-36 bottom-36 w-0.5 bg-zinc-700 hidden sm:block"></div>
-      
-      <div className="relative space-y-12 sm:space-y-16 max-w-3xl mx-auto">
-        {EDUCATION.map((edu, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ 
-              duration: 0.7,
-              type: "spring",
-              stiffness: 100
-            }}
-            viewport={{ once: true }}
-            className={`flex flex-col sm:flex-row items-center w-full ${
-              index % 2 === 0 ? 'sm:flex-row-reverse' : 'sm:flex-row'
-            }`}
-          >
-            {/* Timeline Dot */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 z-10 hidden sm:block">
-              <div className="w-4 h-4 bg-teal-500 rounded-full border-2 border-zinc-800"></div>
-            </div>
+  const shouldReduceMotion = useReducedMotion();
 
-            {/* Education Card */}
-            <div className={`w-full sm:w-1/2 ${
-              index % 2 === 0 ? 'sm:pl-12' : 'sm:pr-12'
-            }`}>
-              <div className="bg-zinc-800/50 rounded-xl p-6 hover:bg-zinc-800/70 transition-all duration-300">
-                <div className="flex items-center mb-3">
-                  <img
-                    src={edu.logo}
-                    alt={`${edu.institution} logo`}
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
+  const motionProps = (delay = 0) => ({
+    initial: false,
+    whileInView: { opacity: 1, y: 0 },
+    transition: shouldReduceMotion
+      ? { duration: 0 }
+      : { duration: 0.4, delay, ease: [0.22, 1, 0.36, 1] },
+    viewport: { once: true, amount: 0.2 },
+  });
+
+  return (
+    <section
+      id="education"
+      className="education-editorial py-24 sm:py-28 lg:py-32"
+      aria-labelledby="education-heading"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+        <motion.header {...motionProps()} className="max-w-4xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--education-olive)]">
+            Academic background
+          </p>
+          <h2
+            id="education-heading"
+            className="mt-5 text-5xl font-semibold tracking-[-0.045em] text-[var(--education-ink)] sm:text-6xl lg:text-7xl"
+          >
+            Built on a foundation of learning.
+          </h2>
+        </motion.header>
+
+        <ol className="mt-16 lg:mt-20" aria-label="Academic journey">
+          {EDUCATION_STAGES.map((stage, index) => {
+            const stageEntries = stage.educationIds
+              .map((educationId) => EDUCATION_BY_ID.get(educationId))
+              .filter(Boolean);
+            const isCurrentStage = stage.id === "current-studies";
+
+            return (
+              <motion.li
+                key={stage.id}
+                {...motionProps(index * 0.08)}
+                className="relative pb-16 pl-10 last:pb-0 sm:pl-14 lg:pb-20"
+              >
+                {index < EDUCATION_STAGES.length - 1 && (
+                  <span
+                    className="absolute -bottom-1 left-[0.4375rem] top-4 w-px bg-[var(--education-border)]"
+                    aria-hidden="true"
                   />
-                  <h3 className="text-xl font-semibold text-white">
-                    {edu.institution}
-                  </h3>
+                )}
+                <span
+                  className="absolute left-0 top-1 h-4 w-4 rounded-full border-4 border-[var(--project-gallery-white)] bg-[var(--education-olive)] ring-1 ring-[var(--education-olive)]"
+                  aria-hidden="true"
+                />
+
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--education-olive)]">
+                      Stage / {stage.number}
+                    </p>
+                    <h3 className="mt-3 text-2xl font-semibold tracking-[-0.025em] text-[var(--education-ink)] sm:text-3xl">
+                      {stage.label}
+                    </h3>
+                  </div>
+                  <p className="font-mono text-xs uppercase tracking-[0.12em] text-[var(--education-muted)]">
+                    {stage.period}
+                  </p>
                 </div>
-                <p className="text-md text-gray-300 mb-1">
-                  {edu.degree}
-                </p>
-                <p className="text-teal-400 text-sm">
-                  {edu.location} • {edu.duration}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+
+                <div className={`mt-7 grid gap-5 ${isCurrentStage ? "lg:grid-cols-2" : "grid-cols-1"}`}>
+                  {stageEntries.map((education) => (
+                    <article
+                      key={education.id}
+                      aria-labelledby={`education-${education.id}`}
+                      className={
+                        isCurrentStage
+                          ? "bg-[var(--education-surface)] p-6 sm:p-7"
+                          : "border-t border-[var(--education-border)] pt-6"
+                      }
+                    >
+                      <h4
+                        id={`education-${education.id}`}
+                        className="text-xl font-semibold tracking-[-0.02em] text-[var(--education-ink)] sm:text-2xl"
+                      >
+                        {education.institution}
+                      </h4>
+                      <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--education-muted)] sm:text-base">
+                        {education.displayProgram}
+                      </p>
+                      <p className="mt-5 text-xs uppercase tracking-[0.12em] text-[var(--education-olive)]">
+                        {education.location}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </motion.li>
+            );
+          })}
+        </ol>
       </div>
-    </div>
+    </section>
   );
 };
 

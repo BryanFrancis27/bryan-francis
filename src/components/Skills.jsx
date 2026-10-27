@@ -1,98 +1,70 @@
-import { SKILLS } from "../constants";
-import SkillBar from "../components/SkillBar";
-import { motion } from "framer-motion";
-import { FaComments, FaBrain, FaClock, FaLightbulb } from "react-icons/fa";
+import { motion, useReducedMotion } from "framer-motion";
+import { SKILL_GROUPS } from "../data/skills";
 
 const Skills = () => {
-  const softSkills = [
-    { name: "Time Management", icon: <FaClock size={28} className="text-white" /> },
-    { name: "Communication", icon: <FaComments size={28} className="text-white" /> },
-    { name: "Adaptability", icon: <FaLightbulb size={28} className="text-white" /> },
-    { name: "Problem-Solving", icon: <FaBrain size={28} className="text-white" /> },
-    { name: "Creativity", icon: <FaLightbulb size={28} className="text-white" /> },
-  ];
+  const shouldReduceMotion = useReducedMotion();
+
+  const motionProps = (delay = 0) => ({
+    initial: false,
+    whileInView: { opacity: 1, y: 0 },
+    transition: shouldReduceMotion
+      ? { duration: 0 }
+      : { duration: 0.4, delay, ease: [0.22, 1, 0.36, 1] },
+    viewport: { once: true, amount: 0.2 },
+  });
 
   return (
-    <div className="container mx-auto px-4 sm:px-8 lg:px-16 max-w-7xl" id="skills">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ 
-          duration: 0.6,
-          type: "spring"
-        }}
-        viewport={{ once: true }}
-        className="mb-12 mt-20 text-center text-4xl sm:text-5xl font-semibold text-white"
-      >
-        Skills
-      </motion.h2>
-      
-      <div className="flex flex-col md:flex-row justify-center gap-10">
-        {SKILLS.map((category, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ 
-              duration: 0.7,
-              type: "spring",
-              stiffness: 100
-            }}
-            viewport={{ once: true }}
-            className="w-full md:w-1/2"
+    <section
+      id="skills"
+      className="skills-editorial py-24 sm:py-28 lg:py-32"
+      aria-labelledby="skills-heading"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+        <motion.header {...motionProps()}>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--project-olive-light)]">
+            Capabilities
+          </p>
+          <h2
+            id="skills-heading"
+            className="mt-5 text-5xl font-semibold tracking-[-0.045em] text-[var(--project-gallery-white)] sm:text-6xl lg:text-7xl"
           >
-            <h3 className="text-left text-2xl font-semibold text-white mb-6 pb-2 border-b border-zinc-800">
-              {category.category}
-            </h3>
-            {category.skills.map((skill, skillIndex) => (
-              <SkillBar
-                key={skillIndex}
-                name={skill.name}
-                experience={skill.experience}
-                color={skill.color}
-                icon={skill.icon}
-              />
-            ))}
-          </motion.div>
-        ))}
-      </div>
+            My Tech Stack.
+          </h2>
+        </motion.header>
 
-      {/* Soft Skills Container */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ 
-          duration: 0.7, 
-          delay: 0.3,
-          type: "spring"
-        }}
-        viewport={{ once: true }}
-        className="mt-12 px-4 max-w-7xl mx-auto"
-      >
-        <h3 className="text-left text-2xl font-semibold text-white mb-6 pb-2 border-b border-zinc-800">
-          Professional Skills
-        </h3>
-        <div className="grid grid-cols-3 lg:grid-cols-5 gap-6"> 
-          {softSkills.map((skill, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 10px 25px rgba(255, 255, 255, 0.1)"
-              }}
-              className="flex flex-col items-center justify-center p-6 group transition-all duration-300"
+        <div className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-3 lg:mt-16 lg:gap-x-14">
+          {SKILL_GROUPS.map((group, index) => (
+            <motion.article
+              key={group.id}
+              {...motionProps(index * 0.06)}
+              aria-labelledby={`skill-group-${group.id}`}
+              className="border-t border-[var(--project-border)] pt-6"
             >
-              <div className="mb-4 p-3 bg-zinc-800 rounded-full group-hover:bg-zinc-700 transition-colors">
-                {skill.icon}
-              </div>
-              <h4 className="text-white text-center text-sm font-medium group-hover:text-yellow-400 transition-colors">
-                {skill.name}
-              </h4>
-            </motion.div>
+              <p className="font-mono text-xs text-[var(--project-olive-light)]">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3
+                id={`skill-group-${group.id}`}
+                className="mt-4 text-2xl font-semibold tracking-[-0.025em] text-[var(--project-gallery-white)]"
+              >
+                {group.displayTitle}
+              </h3>
+
+              <ul
+                className="mt-7 space-y-3"
+                aria-label={`${group.title} technologies and practices`}
+              >
+                {group.displayTechnologies.map((technology) => (
+                  <li key={technology} className="text-base leading-6 text-[var(--project-text-muted)]">
+                    {technology}
+                  </li>
+                ))}
+              </ul>
+            </motion.article>
           ))}
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </section>
   );
 };
 

@@ -1,108 +1,60 @@
-import { useState } from 'react';
-import logo from "../assets/logo.png";
+import { useEffect, useState } from "react";
+import { House, CodeXml, Folder, Mail, UserRound } from "lucide-react";
 import { NAVIGATION_LINKS } from "../constants";
-import { FaBars, FaTimes } from 'react-icons/fa';
 
-const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const icons = { home: House, about: UserRound, skills: CodeXml, projects: Folder, contact: Mail };
+const destinations = [{ label: "Home", href: "#home" }, ...NAVIGATION_LINKS];
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+export default function Navbar() {
+  const [active, setActive] = useState("home");
+  const [hideTooltips, setHideTooltips] = useState(false);
 
-  const handleLinkClick = (e, href) => {
-    e.preventDefault();
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      const offset = -140; // Adjust the offset value for higher scrolling
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY + offset;
-  
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-    setIsMobileMenuOpen(false); // Close mobile menu on link click
-  };
-  
+  useEffect(() => {
+    const sections = destinations.map(link => document.getElementById(link.href.slice(1))).filter(Boolean);
+    let frame = 0;
+    let currentSection = "home";
+    const update = () => {
+      frame = 0;
+      // A stable reading line handles long sections and gaps without ratio flicker.
+      const line = window.innerHeight * .3;
+      const atBottom = window.scrollY > 0 && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      const nextSection = atBottom ? sections.at(-1).id : sections.filter(section => section.getBoundingClientRect().top <= line).at(-1)?.id || "home";
+      if (nextSection !== currentSection) {
+        currentSection = nextSection;
+        setActive(nextSection);
+      }
+    };
+    const schedule = () => { if (!frame) frame = window.requestAnimationFrame(update); };
+    schedule();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    window.addEventListener("hashchange", schedule);
+    window.addEventListener("pageshow", schedule);
+    const resizeObserver = new ResizeObserver(schedule);
+    sections.forEach(section => resizeObserver.observe(section));
+    return () => {
+      window.cancelAnimationFrame(frame);
+      resizeObserver.disconnect();
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      window.removeEventListener("hashchange", schedule);
+      window.removeEventListener("pageshow", schedule);
+    };
+  }, []);
 
-  const handleLogoClick = (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
-  return (
-    <div>
-      <nav className="fixed left-0 right-0 top-4 z-50">
-        {/* Desktop Menu */}
-        <div className="mx-auto hidden max-w-2xl items-center justify-center rounded-lg bg-black/20 py-3 backdrop-blur-lg lg:flex">
-          <div className="flex justify-between gap-12">
-            <div>
-              <a href="#" onClick={handleLogoClick}>
-                <img src={logo} width={90} alt="logo" />
-              </a>
-            </div>
-            <div>
-              <ul className="flex items-center gap-10 pt-6">
-                {NAVIGATION_LINKS.map((item, index) => (
-                  <li key={index}>
-                    <a
-                      className="text-sm hover:text-yellow-400"
-                      href={item.href}
-                      onClick={(e) => handleLinkClick(e, item.href)}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-        {/* Mobile Menu */}
-        <div className="rounded-lg backdrop-blur-md lg:hidden">
-          <div className="flex items-center justify-between">
-            <div>
-              <a href="#" onClick={handleLogoClick}>
-                <img src={logo} width={90} alt="logo" className="m-2" />
-              </a>
-            </div>
-            <div className="flex items-center">
-              <button
-                className="focus:outline-none lg:hidden"
-                onClick={toggleMobileMenu}
-              >
-                {isMobileMenuOpen ? (
-                  <FaTimes className="m-2 h-6 w-5" />
-                ) : (
-                  <FaBars className="m-2 h-6 w-5" />
-                )}
-              </button>
-            </div>
-          </div>
-          {isMobileMenuOpen && (
-            <ul className="ml-4 mt-4 flex flex-col gap-4 backdrop-blur-md">
-              {NAVIGATION_LINKS.map((item, index) => (
-                <li key={index}>
-                  <a
-                    className="block w-full text-xl font-semibold"
-                    href={item.href}
-                    onClick={(e) => handleLinkClick(e, item.href)}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </nav>
-    </div>
-  );
-};
-
-export default Navbar;
+  return <nav aria-label="Main navigation" className={`portfolio-dock${hideTooltips ? " hide-tooltips" : ""}`} style={{ "--active-index": destinations.findIndex(link => link.href === `#${active}`) }} onKeyDown={event => { if (event.key === "Escape") setHideTooltips(true); }}>
+    <span className="dock-indicator" aria-hidden="true" />
+    <ul className="dock-links">
+      {destinations.map(({ label, href }) => {
+        const id = href.slice(1);
+        const Icon = icons[id];
+        return <li key={href}>
+          <a className={`dock-link${active === id ? " is-active" : ""}`} href={href} aria-label={label} aria-current={active === id ? "location" : undefined} onFocus={() => setHideTooltips(false)} onPointerEnter={() => setHideTooltips(false)}>
+            <Icon size={20} strokeWidth={1.75} aria-hidden="true" focusable="false" />
+            <span className="dock-tooltip" aria-hidden="true">{label}</span>
+          </a>
+        </li>;
+      })}
+    </ul>
+  </nav>;
+}
