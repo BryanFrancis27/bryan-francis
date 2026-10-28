@@ -42,7 +42,7 @@ export default function Navbar() {
     };
   }, []);
 
-  return <nav aria-label="Main navigation" className={`portfolio-dock${hideTooltips ? " hide-tooltips" : ""}`} style={{ "--active-index": destinations.findIndex(link => link.href === `#${active}`) }} onKeyDown={event => { if (event.key === "Escape") setHideTooltips(true); }}>
+  return <div className="dock-position"><nav aria-label="Main navigation" className={`portfolio-dock${hideTooltips ? " hide-tooltips" : ""}`} style={{ "--active-index": destinations.findIndex(link => link.href === `#${active}`) }} onKeyDown={event => { if (event.key === "Escape") setHideTooltips(true); }}>
     <span className="dock-indicator" aria-hidden="true" />
     <ul className="dock-links">
       {destinations.map(({ label, href }) => {
@@ -56,5 +56,5 @@ export default function Navbar() {
         </li>;
       })}
     </ul>
-  </nav>;
+  </nav></div>;
 }
