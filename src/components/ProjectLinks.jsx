@@ -3,7 +3,7 @@ import { BookOpen, ExternalLink, Github } from "lucide-react";
 
 const ProjectLinks = ({ project }) => {
   const links = [
-    { href: project.liveUrl, label: "Live project", icon: ExternalLink },
+    { href: project.liveUrl, label: "Live Preview", icon: ExternalLink },
     { href: project.sourceUrl, label: "Source code", icon: Github },
     { href: project.caseStudyUrl, label: "Case study", icon: BookOpen },
   ].filter((link) => link.href);

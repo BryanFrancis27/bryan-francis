@@ -52,6 +52,7 @@ export const SKILL_GROUPS = [
       "Node.js",
       "PostgreSQL / MySQL",
       "Supabase",
+      "Firebase / Firestore",
     ],
     capabilities: [
       "Application and product workflow logic",
