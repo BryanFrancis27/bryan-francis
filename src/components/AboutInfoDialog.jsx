@@ -10,8 +10,8 @@ const titles = { background: "Educational Background", experience: "Professional
 const experience = [
   {
     company: "Vision2Creation",
-    role: "Software Engineer (Contractual)",
-    dates: "January 2026 – June 2026",
+    role: "Software Engineer",
+    dates: "January 2026 – October 2026",
     contributions: [
       "Developed and maintained AI-powered SaaS platforms using React, Next.js, TypeScript, Firebase, and Firestore.",
       "Built reporting, communication, notification, and workflow automation features with real-time data synchronization.",
