@@ -190,6 +190,28 @@ a, button { transition: color .2s, background-color .2s, border-color .2s, box-s
 }
 .skills-editorial, .education-editorial { background: var(--color-background); }
 .skills-editorial h2, .education-editorial h2 { font-size: clamp(2.3rem, 4.6vw, 3.8rem); letter-spacing: -.045em; }
+.skills-header { display: flex; flex-direction: column; gap: 1.25rem; }
+.skills-subtitle { color: var(--color-text-secondary); font-size: .9rem; line-height: 1.7; }
+.skills-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3rem 2.5rem; margin-top: 3.5rem; }
+.skill-group { min-width: 0; border-top: 1px solid var(--color-border); padding-top: 1.25rem; }
+.skill-group-heading { display: flex; align-items: baseline; gap: .65rem; color: var(--color-text-primary); font-size: 1.125rem; font-weight: 600; letter-spacing: -.025em; line-height: 1.4; overflow-wrap: anywhere; }
+.skill-group-number { flex-shrink: 0; color: var(--color-accent); font-family: ui-monospace, monospace; font-size: .7rem; font-weight: 400; letter-spacing: 0; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+.tech-tag { display: inline-flex; align-items: center; max-width: 100%; min-width: 0; padding: .45rem .7rem; border: 1px solid var(--color-border); border-radius: 5px; background: var(--color-surface); color: var(--color-text-primary); font-size: .8rem; line-height: 1.35; overflow-wrap: anywhere; transition: border-color .2s ease, background-color .2s ease; }
+@media (min-width: 768px) {
+  .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .skills-header { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+  .skills-subtitle { max-width: 20rem; padding-bottom: .25rem; }
+  .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 4rem; gap: 3rem 3.5rem; }
+}
+@media (hover: hover) {
+  .skills-editorial .tech-tag:hover { border-color: var(--color-accent); background: rgb(245 158 11 / 5%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skills-editorial .tech-tag { transition: none; }
+}
 .education-editorial article { border-radius: 8px; }
 .education-editorial ol > li > span.rounded-full { border-color: var(--color-background); }
 .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 3rem; }

@@ -2,7 +2,6 @@ export const SKILL_GROUPS = [
   {
     id: "frontend",
     title: "Frontend Development",
-    displayTitle: "Frontend",
     description:
       "Building responsive, component-based interfaces with a focus on clear structure, maintainable styling, and purposeful interaction.",
     technologies: [
@@ -20,8 +19,10 @@ export const SKILL_GROUPS = [
       "Next.js",
       "TypeScript",
       "JavaScript",
-      "HTML / CSS",
+      "HTML5 / CSS3",
       "Tailwind CSS",
+      "Bootstrap",
+      "Framer Motion",
     ],
     capabilities: [
       "Responsive interface implementation",
@@ -31,8 +32,7 @@ export const SKILL_GROUPS = [
   },
   {
     id: "backend-software-engineering",
-    title: "Backend & Software Engineering",
-    displayTitle: "Backend",
+    title: "Backend & APIs",
     description:
       "Developing application logic and data-backed product workflows across server frameworks, databases, and managed backend services.",
     technologies: [
@@ -47,12 +47,12 @@ export const SKILL_GROUPS = [
       "Firebase / Firestore",
     ],
     displayTechnologies: [
-      "Java / Spring Boot",
       "PHP / Laravel",
+      "Java / Spring Boot",
       "Node.js",
-      "PostgreSQL / MySQL",
-      "Supabase",
-      "Firebase / Firestore",
+      "Next.js API Routes",
+      "REST APIs",
+      "Firebase Admin SDK",
     ],
     capabilities: [
       "Application and product workflow logic",
@@ -61,17 +61,41 @@ export const SKILL_GROUPS = [
     ],
   },
   {
+    id: "databases-cloud",
+    title: "Databases & Cloud",
+    displayTechnologies: [
+      "PostgreSQL",
+      "MySQL",
+      "Supabase",
+      "Firebase / Firestore",
+      "Firebase Authentication",
+    ],
+  },
+  {
     id: "interface-design",
-    title: "UI/UX & Interface Design",
-    displayTitle: "Design",
+    title: "UI/UX & Design",
     description:
       "Translating interface ideas into responsive layouts and prototypes while keeping visual hierarchy and interaction patterns clear.",
     technologies: ["Figma", "Responsive UI", "Wireframing", "Prototyping"],
-    displayTechnologies: ["Figma", "Wireframing", "Prototyping", "Responsive UI"],
+    displayTechnologies: ["Figma", "Wireframing", "Prototyping", "Responsive Design"],
     capabilities: [
       "Interface structure and visual hierarchy",
       "Wireframing and interactive prototyping",
       "Responsive layout planning",
+    ],
+  },
+  {
+    id: "development-tools-ai",
+    title: "Development Tools & AI",
+    displayTechnologies: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Postman",
+      "ChatGPT / Codex",
+      "GitHub Copilot",
+      "Claude AI",
+      "Gemini AI",
     ],
   },
 ];
