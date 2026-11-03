@@ -10,11 +10,11 @@ A personal portfolio showcasing my work as a **Software Developer / UI/UX Design
 
 Portfolio V3 is designed to help recruiters, collaborators, and potential clients understand what I build, how I approach design and development, and how to get in touch. Projects appear immediately after the introduction so visitors can explore the work first.
 
-**Page flow:** Home → Projects → About → Tech Stack → Contact
+**Page flow:** Home → Selected Work → About → Tech Stack → Contact
 
 ## Features
 
-- **Recruiter-first project gallery** — Five selected projects, with featured work, technology labels, and responsive cards.
+- **Selected Work** — An ongoing flagship application, two professional engineering entries, and an expandable gallery of four supporting projects.
 - **Animated project details** — Accessible dialogs for project descriptions, technologies, features, and contributions, with smooth transitions.
 - **BryanOS-inspired navigation** — A floating vertical dock on desktop and a bottom dock on smaller screens, with active-section indicators and accessible labels.
 - **Shared portrait presentation** — The same circular studio portrait in Home and About, framed by subtle amber glow effects.
@@ -37,17 +37,13 @@ Portfolio V3 is designed to help recruiters, collaborators, and potential client
 
 **Design palette:** Deep Black `#070708` · Amber `#F59E0B` · Soft White `#F5F5F5`
 
-## Selected projects
+## Selected Work
 
-| Project | Focus |
-| --- | --- |
-| **AutoCare+** | Full-stack vehicle maintenance records, service reminders, and secure dashboard workflows. |
-| **LunarLedger** | Personal budgeting, payable tracking, financial visualizations, and planning. |
-| **DoBu Martial Arts** | A responsive website for martial arts classes and gym services. |
-| **Meals on Wheels** | A web application concept supporting charitable food delivery for people in need. |
-| **BryanOS** | An operating-system-inspired portfolio experience built around modular interactive interfaces. |
+1. **Flagship Personal Project:** AutoCare+ — an ongoing full-stack vehicle maintenance application.
+2. **Professional Work:** Conversational Marketing AI Application (ClaaS2SaaS Pte. Ltd.) and AI-Powered SaaS Product Engineering (Vision2Creation), highlighting collaborative engineering contributions.
+3. **More Projects:** LunarLedger, DoBu Martial Arts, Meals on Wheels, and BryanOS. The gallery starts collapsed and opens with the minimal **Explore more** toggle.
 
-Project information is maintained in [`src/data/projects.js`](src/data/projects.js). Some project previews are still being updated; unavailable visuals and links are not represented as completed demos.
+All seven project records are included in development and production builds. Content is maintained in [`src/data/projects.js`](src/data/projects.js) and [`src/data/professional-projects.js`](src/data/professional-projects.js). Professional work uses high-level descriptions without confidential product identities, screenshots, or employer-owned project links. AutoCare+ retains an intentional screenshot placeholder.
 
 ## Getting started
 

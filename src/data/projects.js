@@ -2,7 +2,7 @@ import dobuMartialArtsImage from "../assets/DobuMartialArts.png";
 import mealsOnWheelsImage from "../assets/MealsOnWheels.png";
 import lunarLedgerImage from "../assets/LunarLedger_preview.png";
 import bryanOSImage from "../assets/BryanOS_preview.png";
-import { PROFESSIONAL_PROJECTS } from "./professional-projects.review";
+import { PROFESSIONAL_PROJECTS } from "./professional-projects";
 
 export const PROJECTS = [
   {
@@ -128,6 +128,5 @@ export const PROJECTS = [
     sourceUrl: null,
     caseStudyUrl: null,
   },
-  // Public-disclosure approval is pending. Vite removes this branch in production builds.
-  ...(import.meta.env.DEV ? PROFESSIONAL_PROJECTS : []),
+  ...PROFESSIONAL_PROJECTS,
 ];

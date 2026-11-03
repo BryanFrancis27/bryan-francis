@@ -1,4 +1,3 @@
-// Local development review only; neither entry is cleared for public publication.
 export const PROFESSIONAL_PROJECTS = [
   {
     id: "conversational-marketing-ai",
@@ -19,7 +18,7 @@ export const PROFESSIONAL_PROJECTS = [
       "Participated in testing, debugging, and collaborative software engineering workflows.",
     ],
     disclosure:
-      "Collaborative industry work. Permission for public portfolio publication and technical disclosure is pending.",
+      "Selected contributions to a collaborative industry project.",
     features: [],
     image: null,
     liveUrl: null,

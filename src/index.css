@@ -219,7 +219,6 @@ a, button { transition: color .2s, background-color .2s, border-color .2s, box-s
 .project-group { margin-top: 3.5rem; }
 .project-group-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .75rem 1.5rem; margin-bottom: 1.5rem; }
 .project-group-heading h3 { font-size: 1.35rem; font-weight: 600; letter-spacing: -.025em; }
-.project-review-note { color: var(--color-text-secondary); font-size: .7rem; }
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .more-projects { margin-top: 2.5rem; }
 .more-projects-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .75rem 2rem; }

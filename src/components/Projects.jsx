@@ -23,7 +23,6 @@ export default function Projects() {
           <section className="project-group" aria-labelledby="professional-work-heading">
             <div className="project-group-heading">
               <h3 id="professional-work-heading">Professional Work</h3>
-              <p className="project-review-note">Local review only · Public-disclosure approval pending</p>
             </div>
             <div className="project-grid project-grid--professional">{professional.map(renderCard)}</div>
           </section>
