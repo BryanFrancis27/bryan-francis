@@ -11,6 +11,9 @@ const PRESENTATIONS = {
 
 export default function ProjectMedia({ project, variant }) {
   const [failedImage, setFailedImage] = useState(null);
+  if (project.tier === "professional") {
+    return <div className="project-media project-commercial-media"><span className="commercial-media-mark" aria-hidden="true">{project.employer}</span><p>Commercial work <span aria-hidden="true">—</span> preview not publicly available</p></div>;
+  }
   const presentation = PRESENTATIONS[project.id];
   const displayVariant = variant || presentation?.variant || "browser";
   const useScreenshot = project.image && failedImage !== project.image && displayVariant !== "placeholder";

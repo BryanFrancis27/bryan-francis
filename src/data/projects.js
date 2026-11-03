@@ -2,14 +2,19 @@ import dobuMartialArtsImage from "../assets/DobuMartialArts.png";
 import mealsOnWheelsImage from "../assets/MealsOnWheels.png";
 import lunarLedgerImage from "../assets/LunarLedger_preview.png";
 import bryanOSImage from "../assets/BryanOS_preview.png";
+import { PROFESSIONAL_PROJECTS } from "./professional-projects.review";
 
 export const PROJECTS = [
   {
     id: "autocare-plus",
+    tier: "flagship",
     slug: "autocare-plus",
     title: "AutoCare+",
-    category: null,
-    summary: null,
+    category: "Flagship Personal Project",
+    status: "Ongoing",
+    descriptor: "Full-Stack Vehicle Maintenance Application",
+    summary:
+      "An ongoing full-stack application for managing vehicles, maintenance history, service reminders, and secure owner-based records.",
     description:
       "A full-stack vehicle maintenance tracker that helps vehicle owners manage service history, track reminders, and organize vehicle records through a secure Supabase-backed dashboard.",
     technologies: [
@@ -37,6 +42,7 @@ export const PROJECTS = [
   },
   {
     id: "lunar-ledger",
+    tier: "other",
     slug: "lunar-ledger",
     title: "LunarLedger",
     category: null,
@@ -60,6 +66,7 @@ export const PROJECTS = [
   },
   {
     id: "dobu-martial-arts",
+    tier: "other",
     slug: "dobu-martial-arts",
     title: "DoBu Martial Arts",
     category: null,
@@ -79,6 +86,7 @@ export const PROJECTS = [
   },
   {
     id: "meals-on-wheels",
+    tier: "other",
     slug: "meals-on-wheels",
     title: "Meals on Wheels",
     category: null,
@@ -98,6 +106,7 @@ export const PROJECTS = [
   },
   {
     id: "bryanos",
+    tier: "other",
     slug: "bryanos",
     title: "BryanOS",
     category: null,
@@ -119,4 +128,6 @@ export const PROJECTS = [
     sourceUrl: null,
     caseStudyUrl: null,
   },
+  // Public-disclosure approval is pending. Vite removes this branch in production builds.
+  ...(import.meta.env.DEV ? PROFESSIONAL_PROJECTS : []),
 ];

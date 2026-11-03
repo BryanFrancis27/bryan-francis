@@ -91,9 +91,14 @@ export default function ProjectDetails({ project, trigger, onClose }) {
 
   return <dialog ref={dialog} className={`project-dialog is-${phase}`} aria-labelledby="project-dialog-title" onCancel={event => { event.preventDefault(); requestClose(); }}>
     <div className="dialog-top"><p className="eyebrow">Project details</p><button ref={closeButton} className="button button-secondary" type="button" autoFocus onClick={requestClose} aria-label="Close project details">Close <span aria-hidden="true">×</span></button></div>
-    <div className="project-dialog-content"><h2 id="project-dialog-title">{project.title}</h2><p className="dialog-description">{project.description}</p><ProjectMedia project={project} />
-    <h3>Main technologies</h3><ul className="project-tech">{project.technologies.map(tech => <li key={tech}>{tech}</li>)}</ul>
-    {[{ title: "Features", items: project.features }, { title: "Contributions", items: project.contributions }].filter(group => group.items.length).map(group => <div key={group.title}><h3>{group.title}</h3><ul className="detail-list">{group.items.map(item => <li key={item}>{item}</li>)}</ul></div>)}
+    <div className="project-dialog-content"><h2 id="project-dialog-title">{project.title}</h2>
+    {project.category && <p className="project-dialog-classification">{project.category}{project.status && <> · {project.status}</>}</p>}
+    {project.descriptor && <p className="project-descriptor">{project.descriptor}</p>}
+    {project.employer && <p className="project-employer">{project.employer}<span className="project-role">{project.role}</span></p>}
+    <p className="dialog-description">{project.description}</p><ProjectMedia project={project} />
+    {project.technologies?.length > 0 && <><h3>Main technologies</h3><ul className="project-tech">{project.technologies.map(tech => <li key={tech}>{tech}</li>)}</ul></>}
+    {[{ title: "Features", items: project.features }, { title: "My Contributions", items: project.contributions }].filter(group => group.items?.length).map(group => <div key={group.title}><h3>{group.title}</h3><ul className="detail-list">{group.items.map(item => <li key={item}>{item}</li>)}</ul></div>)}
+    {project.disclosure && <p className="project-disclosure">{project.disclosure}</p>}
     <ProjectLinks project={project} /></div></dialog>;
 }
 ProjectDetails.propTypes = { project: PropTypes.object.isRequired, trigger: PropTypes.shape({ focus: PropTypes.func, isConnected: PropTypes.bool }).isRequired, onClose: PropTypes.func.isRequired };
